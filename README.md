@@ -15,8 +15,9 @@ probes while maintaining data integrity through encryption.
         * SSL/TLS handshake: Once a service is identified , the scanner initiates a mandatory SSL/TLS handshake with the Log Server using ssl.SSLContext
         * Secure Data transfer : The encrypted scan results are sent to the server , ensuring that data is protected from network sniffing
   Logic flow diagram : 
-   The scanner operates by dividing the port range into chunks, which are processed in parallel by the thread pool.Each thread independently manages its own socket 
-lifecycle .  Creation --> Connection --> Detection --> Reporting --> Closure to maximise throughput.
+   The scanner operates by dividing the port range into chunks, which are processed in parallel by the thread pool.Each thread independently manages its own socket  lifecycle .  
+                Creation --> Connection --> Detection --> Reporting --> Closure 
+                            to maximise throughput.
 
 Performance evaluation  :
 When the system was scanned under high request rates , it scanned 1024 ports in 0.40 seconds when I run it first. We have used a concurrency model which uses a 
